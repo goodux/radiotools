@@ -37,7 +37,8 @@ class RadioTools {
 
 	function add_rewrite_rules($wp_rewrite) {
 		$rules = array(
-			'radio-tools-stream-proxy\/?$' => 'index.php?radio-tools-stream-proxy=true',
+			'radio-tools-stream-proxy\/?$' 	=> 'index.php?radio-tools-stream-proxy=true',
+			'radio-tools-window-player\/?$'	=>	'index.php?radio-tools-window-player=true',
 		);
 		$wp_rewrite->rules = $rules + (array)$wp_rewrite->rules;
 
@@ -45,6 +46,7 @@ class RadioTools {
 
 	function query_vars($public_query_vars) {
 		array_push($public_query_vars, 'radio-tools-stream-proxy');
+		array_push($public_query_vars, 'radio-tools-window-player');
 		return $public_query_vars;
 	}
 
@@ -53,9 +55,14 @@ class RadioTools {
 			$this->stream_proxy();
 			die();
 		}
+
+		if (array_key_exists( 'radio-tools-window-player', $wp->query_vars )) {
+			$this->render_window_player();
+			die();
+		}
 	}
 
-	function render_radio_widget($atts) {
+	function render_radio_widget() {
 
 		$html = '';
 
@@ -68,9 +75,10 @@ class RadioTools {
 		if($stream_url) {
 
 			$stream = array(
-				'url'	=>	$stream_url,
-				'image'	=>	get_option('radio-tools-stream-image', false),
-				'text'	=>	get_option('radio-tools-stream-text', false)
+				'url'				=>	$stream_url,
+				'image'				=>	get_option('radio-tools-stream-image', false),
+				'text'				=>	get_option('radio-tools-stream-text', false),
+				'window_player'		=>	site_url('/radio-tools-window-player/'),
 			);
 
 			$theme_player = get_stylesheet_directory().'/radio-tools/player.php';
@@ -87,6 +95,24 @@ class RadioTools {
 
 		return $player;
 
+	}
+
+	function render_window_player() {
+
+		?>
+		<html>
+			<head>
+			<?php wp_head(); ?>
+			</head>
+			<body>
+			<?php 
+			echo do_shortcode('[radio_tools]');
+			wp_footer();
+			?>
+			</body>
+		</html>
+
+		<?php
 	}
 
 	function stream_proxy() {
