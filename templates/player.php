@@ -15,12 +15,8 @@
 		<?php } ?>
 
 		<button id="radio-tools-button-play"><span class="dashicons dashicons-controls-play"></span></button>
-
 		<button id="radio-tools-button-stop"><span class="dashicons dashicons-controls-pause"></span></button>
-
-		<?php if(!$window_player) { ?>
 		<button id="radio-tools-button-window-player"><span class="dashicons dashicons-external"></span></button>
-		<?php } ?>
 
 	</div>
 
