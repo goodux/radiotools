@@ -144,12 +144,13 @@ class RadioToolsOptions {
                                 <div class="inside">
                                     
                                     <p>
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                                        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                        Radio Tools utilises <a href="https://howlerjs.com/">Howler.js</a> to stream radio audio. It also provides a proxy to a remote audio stream to prevent any issues with CORS and javascript. Stream currently only supports AAC.</p>
+                                    <p>
+                                        More info or feature requests, email <a href="mailto:me@uiux.me">me@uiux.me</a>
+                                    </p>
+                                    <p><br><strong>How to customise:</strong></p>
+                                    <p>
+                                        If you want to load your own template of the audio player, copy the file located at `wp-content/plugins/radiotools/templates/player.php` into your own theme directory, eg. `wp-content/themes/your-theme/radiotools/player.php`
                                     </p>
 
                                 </div>
