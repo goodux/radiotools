@@ -35,6 +35,9 @@ class RadioToolsOptions {
         register_setting( 'radio-tools-options', 'radio-tools-stream-proxy');
         register_setting( 'radio-tools-options', 'radio-tools-stream-image');
         register_setting( 'radio-tools-options', 'radio-tools-stream-text');
+        register_setting( 'radio-tools-options', 'radio-tools-player-colour');
+        register_setting( 'radio-tools-options', 'radio-tools-stream-text-colour');
+        register_setting( 'radio-tools-options', 'radio-tools-button-colour');
     }
 
     function radio_tools_plugin_setup_page(){
@@ -104,6 +107,11 @@ class RadioToolsOptions {
                                     <table class="widefat">
 
                                         <tr valign="top">
+                                        <th scope="row"><strong>Player Colour</strong></th>
+                                        <td><input type="color" name="radio-tools-player-colour" value="<?php echo esc_attr( get_option('radio-tools-player-colour', '#000000') ); ?>" class="tiny-text" /></td>
+                                        </tr>
+
+                                        <tr valign="top">
                                         <th scope="row"><strong>Stream Image URL</strong></th>
                                         <td><input type="text" name="radio-tools-stream-image" value="<?php echo esc_attr( get_option('radio-tools-stream-image', '') ); ?>" class="large-text" /></td>
                                         </tr>
@@ -111,6 +119,16 @@ class RadioToolsOptions {
                                         <tr valign="top">
                                         <th scope="row"><strong>Stream Text</strong></th>
                                         <td><input type="text" name="radio-tools-stream-text" value="<?php echo esc_attr( get_option('radio-tools-stream-text', '') ); ?>" class="large-text" /></td>
+                                        </tr>
+
+                                        <tr valign="top">
+                                        <th scope="row"><strong>Stream Text Colour</strong></th>
+                                        <td><input type="color" name="radio-tools-stream-text-colour" value="<?php echo esc_attr( get_option('radio-tools-stream-text-colour', '#FFFFFF') ); ?>" class="tiny-text" /></td>
+                                        </tr>
+
+                                        <tr valign="top">
+                                        <th scope="row"><strong>Button Colour</strong></th>
+                                        <td><input type="color" name="radio-tools-button-colour" value="<?php echo esc_attr( get_option('radio-tools-button-colour', '#FF0000') ); ?>" class="tiny-text" /></td>
                                         </tr>
 
                                     </table>

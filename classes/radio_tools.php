@@ -75,10 +75,13 @@ class RadioTools {
 		if($stream_url) {
 
 			$stream = array(
-				'url'				=>	$stream_url,
-				'image'				=>	get_option('radio-tools-stream-image', false),
-				'text'				=>	get_option('radio-tools-stream-text', false),
-				'window_player'		=>	site_url('/radio-tools-window-player/'),
+				'url'					=>	$stream_url,
+				'image'					=>	get_option('radio-tools-stream-image', false),
+				'text'					=>	get_option('radio-tools-stream-text', false),
+				'window_player'			=>	site_url('/radio-tools-window-player/'),
+				'player_colour'			=>	get_option('radio-tools-player-colour', '#000000'),
+				'stream_text_colour'	=>	get_option('radio-tools-stream-text-colour', '#FFFFFF'),
+				'button_colour'			=>	get_option('radio-tools-button-colour', '#FF0000'),
 			);
 
 			$theme_player = get_stylesheet_directory().'/radio-tools/player.php';

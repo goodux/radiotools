@@ -46,7 +46,8 @@
 	.radio-tools-player {
 		width:100%;
 		max-width: 400px;
-		border:2px solid black;
+		border:2px solid <?php echo $stream['player_colour']; ?>;
+		background: <?php echo $stream['player_colour']; ?>;
 		border-radius:6px;
 		padding:10px;
 		display: flex;
@@ -54,6 +55,7 @@
 	}
 
 	.radio-tools-player-image {
+		justify-content: flex-start;
 		width:100px;
 	}
 
@@ -62,6 +64,7 @@
 	}
 
 	.radio-tools-player-controls {
+		justify-content: flex-end;
 		padding: 0 10px;
 	}
 
@@ -69,11 +72,14 @@
 	}
 
 	.radio-tools-player-text p {
+		color: <?php echo $stream['stream_text_colour']; ?>;
 		margin:0;
 		padding: 0;
 	}
 
 	.radio-tools-player-controls button {
+		display: inline-block;
 		margin:0;
+		background: <?php echo $stream['button_colour']; ?>;;
 	}
 </style>
