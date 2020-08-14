@@ -1,3 +1,10 @@
+<?php
+// If this file is called directly, abort.
+if ( ! defined( 'WPINC' ) ) {
+	die;
+}
+?>
+
 <div class="radio-tools-player">
 
 	<?php if($stream['image']) { ?>
@@ -28,9 +35,9 @@
 	var radio_tools_button_window_player = document.getElementById("radio-tools-button-window-player");
 	var radio_stream = new Howl({
 		src: "<?php echo $stream['url']; ?>",
-		format: ["aac"],
+		format: ["aac", "mp3"],
 		html5: true,
-		buffer: true
+		buffer: true,
 	});
 	radio_tools_button_play.onclick = function() {
 		radio_stream.play();

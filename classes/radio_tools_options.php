@@ -1,13 +1,15 @@
 <?php
-
-/*
-Plugin Name: Radio Tools
-Plugin URI:https://uiux.me/radio-tools
-Description: Miscellanious Radio Tools
-Version: 1.0
-Author: UIUX <me@uiux.me>
-Author URI: https://uiux.me
-*/
+/**
+ * Plugin Name:       Radio Tools
+ * Plugin URI:        https://uiux.me/radio-tools
+ * Description:       Streaming Audio Made Easy with Customisable Audio Player!
+ * Version:           1.03
+ * Requires at least: 4.0
+ * Author:            UIUX <me@uiux.me>
+ * Author URI:        https://uiux.me/
+ * License:           GPL v2 or later
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ */
 
 // If this file is called directly, abort.
 if ( ! defined( 'WPINC' ) ) {

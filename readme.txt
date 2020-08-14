@@ -1,9 +1,9 @@
 === Radio Tools ===
 Contributors: uiux
-Tags: streaming, voscast, audio, radio
+Tags: streaming audio, voscast, audio, radio, mp3
 Requires at least: 4.0
-Tested up to: 5.4.2
-Stable tag: 1.0
+Tested up to: 5.5
+Stable tag: 1.03
 PHP version: 5.3.0 or greater
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -13,7 +13,8 @@ Easily add a streaming audio player to your site with a shortcode. Easy to custo
 == Description ==
 Radio Tools lets you add a streaming audio player, powered by Howler.js, to your site via a shortcode. You can easily customise the player template to unlock the true potential of Howler.js. This is easy for beginners and experts.
 
-Currently it only supports AAC.
+Stream supports AAC or mp3.
+Proxy currently only supports AAC and may not be supported on most servers.
 
 ### Want to customise your own player?
 
@@ -24,11 +25,17 @@ Currently it only supports AAC.
 
 == Changelog ==
 
+= 1.03 =
+- Bugfixing busted plugin header
+
+= 1.02 =
+- Adding buffer=true to allow js to load stream
+
+= 1.01 =
+- Swapping fopen for curl
+
 = 1.0 =
-**Initial Commit**
-- Fixes issues previewing custom fields with ACF #1712
-- Fixes some edge cases with Menu Item classes #1709
-- Improved efficiency of Post class instantiation #1660
+- Initial commit
 
 == Screenshots ==
 
