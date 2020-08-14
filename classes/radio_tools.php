@@ -119,16 +119,26 @@ class RadioTools {
 	}
 
 	function stream_proxy() {
-		header('Content-Type: audio/aac');
+		header('Content-Type: application/octet-stream');
 		$stream_url = get_option('radio-tools-stream-url', false);
 		if($stream_url) {
-			$f = fopen($stream_url,'r');
-			if(!$f) exit;
-			while(!feof($f)) {
-				echo fread($f,128);  
-				flush();
+			$ch = curl_init();
+			curl_setopt($ch,CURLOPT_URL,$stream_url);
+			curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+			curl_setopt($ch, CURLOPT_HEADERFUNCTION, function($curl, $header)
+			{
+				header($header);
+				return strlen($header);
 			}
-			fclose($f);
+			);
+			curl_setopt($ch, CURLOPT_WRITEFUNCTION, function($curl, $body)
+				{
+					echo $body;
+					return strlen($body);
+				}
+			);
+			$data = curl_exec($ch);
+			curl_close($ch);
 		}
 		
 	}

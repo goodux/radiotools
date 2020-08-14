@@ -29,7 +29,8 @@
 	var radio_stream = new Howl({
 		src: "<?php echo $stream['url']; ?>",
 		format: ["aac"],
-		html5: true
+		html5: true,
+		buffer: true
 	});
 	radio_tools_button_play.onclick = function() {
 		radio_stream.play();
