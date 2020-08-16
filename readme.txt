@@ -19,7 +19,7 @@ Proxy currently only supports AAC and may not be supported on most servers.
 ### Want to customise your own player?
 
 1. Go to the plugins directory, and copy the template file from ```<plugin_directory>/templates/player.php```
-2. Copy player.php into your theme directory, ```<theme_directory>/radiotools/player.php```
+2. Copy player.php into your theme directory, ```<theme_directory>/radio-tools/player.php```
 3. Edit the player to do what you want, and look how you want!
 
 
